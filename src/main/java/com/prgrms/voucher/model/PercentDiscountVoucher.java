@@ -21,4 +21,8 @@ public class PercentDiscountVoucher implements Voucher {
     public long discount(long beforeDiscount) {
         return (long) (beforeDiscount - beforeDiscount * (percent * 0.01));
     }
+
+    public static PercentDiscountVoucher create(long percent) {
+        return new PercentDiscountVoucher(UUID.randomUUID(), percent);
+    }
 }
