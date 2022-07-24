@@ -5,15 +5,17 @@ import com.prgrms.voucher.model.VoucherType;
 import com.prgrms.voucher.service.VoucherService;
 import com.prgrms.voucher.view.InputView;
 import com.prgrms.voucher.view.OutputView;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 @Component
 public class VoucherController {
 
+    private static final Logger log = LoggerFactory.getLogger(VoucherController.class);
     public static final String EXIT = "exit";
     public static final String CREATE = "create";
     public static final String LIST = "list";
-
     private final VoucherService voucherService;
 
     public VoucherController(VoucherService voucherService) {
@@ -23,7 +25,12 @@ public class VoucherController {
     public void run() {
         boolean isExit = false;
         while (!isExit) {
-            execute(InputView.inputCommand());
+            try {
+                execute(InputView.inputCommand());
+            } catch (Exception e) {
+                log.error(e.getMessage());
+                OutputView.showErrorMessage(e.getMessage());
+            }
         }
     }
 

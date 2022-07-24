@@ -20,4 +20,8 @@ public class OutputView {
     public static void showCreateMessage(Voucher voucher) {
         System.out.println(voucher.getId() + CREATE_MESSAGE);
     }
+
+    public static void showErrorMessage(String message) {
+        System.out.println(message);
+    }
 }
