@@ -12,11 +12,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class VoucherController {
 
-    public static final String COMMAND_INPUT_ERROR = "잘못된 입력입니다. 다시 입력해주세요.";
+    private static final String COMMAND_INPUT_ERROR = "잘못된 입력입니다. 다시 입력해주세요.";
     private static final Logger log = LoggerFactory.getLogger(VoucherController.class);
-    public static final String EXIT = "exit";
-    public static final String CREATE = "create";
-    public static final String LIST = "list";
+    private static final String EXIT = "exit";
+    private static final String CREATE = "create";
+    private static final String LIST = "list";
     private final VoucherService voucherService;
 
     public VoucherController(VoucherService voucherService) {
