@@ -13,7 +13,7 @@ public class FixedAmountVoucher implements Voucher{
     }
 
     @Override
-    public UUID getVoucherId() {
+    public UUID getId() {
         return voucherId;
     }
 
