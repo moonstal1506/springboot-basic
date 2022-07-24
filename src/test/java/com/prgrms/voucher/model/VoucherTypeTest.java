@@ -13,6 +13,11 @@ class VoucherTypeTest {
     void createFixedAmountVoucher() throws Exception {
         VoucherType fixed = VoucherType.of("fixed");
         Voucher voucher = fixed.create(2000L);
+
+//        타입따라서 생성은 확인했는데
+//        voucher.getClass()하면 java.lang.Class 나옴 어떻게 테스트 하지
+//        assertThat(voucher.getClass()).isInstanceOf(FixedAmountVoucher.class);
+
         long discount = voucher.discount(10000L);
         assertThat(discount).isEqualTo(8000L);
     }
