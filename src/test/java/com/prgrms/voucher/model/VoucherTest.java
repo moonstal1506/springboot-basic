@@ -1,0 +1,35 @@
+package com.prgrms.voucher.model;
+
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.util.UUID;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class VoucherTest {
+
+    @Test
+    void fixedAmountVoucher() throws Exception {
+        UUID voucherId = UUID.randomUUID();
+        long amount = 1000;
+        long beforeDiscount = 10000;
+
+        FixedAmountVoucher fixedAmountVoucher = new FixedAmountVoucher(voucherId, amount);
+        long afterDiscount = fixedAmountVoucher.discount(beforeDiscount);
+
+        Assertions.assertThat(afterDiscount).isEqualTo(9000L);
+    }
+
+    @Test
+    void PercentDiscountVoucher() throws Exception {
+        UUID voucherId = UUID.randomUUID();
+        long percent = 10;
+        long beforeDiscount = 10000;
+
+        PercentDiscountVoucher percentDiscountVoucher = new PercentDiscountVoucher(voucherId, percent);
+        long afterDiscount = percentDiscountVoucher.discount(beforeDiscount);
+
+        Assertions.assertThat(afterDiscount).isEqualTo(9000L);
+    }
+}
