@@ -26,8 +26,14 @@ public class InputView {
         return VoucherType.of(type);
     }
 
-    public static long inputDiscount() {
-        System.out.println("Type discount amount or percent rate");
+    public static long inputDiscount(String type) {
+        if(type.equals(VoucherType.FIXED.getType())){
+            System.out.println("Type discount amount");
+        }
+        if(type.equals(VoucherType.PERCENT.getType())){
+            System.out.println("Type percent rate");
+        }
+
         return scanner.nextLong();
     }
 }
