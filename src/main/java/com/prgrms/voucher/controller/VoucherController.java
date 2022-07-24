@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class VoucherController {
 
+    public static final String COMMAND_INPUT_ERROR = "잘못된 입력입니다. 다시 입력해주세요.";
     private static final Logger log = LoggerFactory.getLogger(VoucherController.class);
     public static final String EXIT = "exit";
     public static final String CREATE = "create";
@@ -46,6 +47,8 @@ public class VoucherController {
             case LIST:
                 OutputView.showVouchers(voucherService.findVouchers());
                 break;
+            default:
+                throw new IllegalArgumentException(COMMAND_INPUT_ERROR);
         }
     }
 
