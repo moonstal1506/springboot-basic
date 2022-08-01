@@ -1,11 +1,13 @@
 package com.prgrms.voucher.repository;
 
 import com.prgrms.voucher.model.Voucher;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Profile("local")
 @Repository
 public class MemoryVoucherRepository implements VoucherRepository {
 
@@ -13,6 +15,7 @@ public class MemoryVoucherRepository implements VoucherRepository {
 
     @Override
     public UUID save(Voucher voucher) {
+        voucher.setId(UUID.randomUUID());
         storage.put(voucher.getId(), voucher);
         return voucher.getId();
     }

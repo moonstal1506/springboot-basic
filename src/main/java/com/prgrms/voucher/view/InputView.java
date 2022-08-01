@@ -33,7 +33,6 @@ public class InputView {
         if(type.equals(VoucherType.PERCENT.getType())){
             System.out.println("Type percent rate");
         }
-
-        return scanner.nextLong();
+        return Integer.parseInt(scanner.nextLine());
     }
 }

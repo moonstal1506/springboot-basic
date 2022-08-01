@@ -10,7 +10,7 @@ public class OutputView {
     private static final String CREATE_MESSAGE = "가 생성되었습니다.";
 
     public static void showVouchers(List<Voucher> vouchers) {
-        vouchers.forEach(voucher -> System.out.println("voucherId: "+ voucher.getId()));
+        vouchers.forEach(System.out::println);
     }
 
     public static void showExitMessage() {
@@ -18,7 +18,7 @@ public class OutputView {
     }
 
     public static void showCreateMessage(Voucher voucher) {
-        System.out.println(voucher.getId() + CREATE_MESSAGE);
+        System.out.println(voucher);
     }
 
     public static void showErrorMessage(String message) {

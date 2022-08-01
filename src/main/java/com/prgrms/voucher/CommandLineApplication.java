@@ -7,8 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class CommandLineApplication {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(
-                AppConfiguration.class);
+        AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(AppConfiguration.class);
         VoucherController controller = ac.getBean(VoucherController.class);
         controller.run();
     }

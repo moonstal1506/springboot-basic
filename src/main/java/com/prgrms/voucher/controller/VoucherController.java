@@ -24,12 +24,11 @@ public class VoucherController {
     }
 
     public void run() {
-        boolean isExit = false;
-        while (!isExit) {
+        while (true) {
             try {
                 execute(InputView.inputCommand());
             } catch (Exception e) {
-                log.error(e.getMessage());
+                log.error(e.getMessage(),e);
                 OutputView.showErrorMessage(e.getMessage());
             }
         }
