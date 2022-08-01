@@ -1,4 +1,4 @@
-package com.prgrms.voucher.model;
+package com.prgrms.voucher.voucher.model;
 
 import com.prgrms.voucher.voucher.model.FixedAmountVoucher;
 import com.prgrms.voucher.voucher.model.PercentDiscountVoucher;
@@ -15,7 +15,7 @@ class VoucherTest {
         long amount = 1000;
         long beforeDiscount = 10000;
 
-        FixedAmountVoucher fixedAmountVoucher = new FixedAmountVoucher(voucherId, amount);
+        FixedAmountVoucher fixedAmountVoucher = new FixedAmountVoucher(amount);
         long afterDiscount = fixedAmountVoucher.discount(beforeDiscount);
 
         Assertions.assertThat(afterDiscount).isEqualTo(9000L);
@@ -23,11 +23,10 @@ class VoucherTest {
 
     @Test
     void PercentDiscountVoucher() throws Exception {
-        UUID voucherId = UUID.randomUUID();
         long percent = 10;
         long beforeDiscount = 10000;
 
-        PercentDiscountVoucher percentDiscountVoucher = new PercentDiscountVoucher(voucherId, percent);
+        PercentDiscountVoucher percentDiscountVoucher = new PercentDiscountVoucher(percent);
         long afterDiscount = percentDiscountVoucher.discount(beforeDiscount);
 
         Assertions.assertThat(afterDiscount).isEqualTo(9000L);

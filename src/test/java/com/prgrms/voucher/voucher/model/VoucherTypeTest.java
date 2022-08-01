@@ -1,4 +1,4 @@
-package com.prgrms.voucher.model;
+package com.prgrms.voucher.voucher.model;
 
 import com.prgrms.voucher.voucher.model.Voucher;
 import com.prgrms.voucher.voucher.model.VoucherType;

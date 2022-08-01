@@ -1,4 +1,4 @@
-package com.prgrms.voucher.repository;
+package com.prgrms.voucher.voucher.repository;
 
 import com.prgrms.voucher.voucher.model.FixedAmountVoucher;
 import com.prgrms.voucher.voucher.model.Voucher;
@@ -23,7 +23,7 @@ class MemoryVoucherRepositoryTest {
     Voucher createVoucher(){
         UUID voucherId = UUID.randomUUID();
         long amount = 1000;
-        return new FixedAmountVoucher(voucherId, amount);
+        return new FixedAmountVoucher(amount);
     }
 
     @Test
