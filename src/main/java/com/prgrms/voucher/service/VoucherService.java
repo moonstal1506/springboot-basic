@@ -21,7 +21,7 @@ public class VoucherService {
         return voucher.getId();
     }
 
-    public List<Voucher> findVouchers(){
+    public List<Voucher> getVouchers(){
         return voucherRepository.findAll();
     }
 

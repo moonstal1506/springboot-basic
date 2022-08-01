@@ -2,6 +2,7 @@ package com.prgrms.voucher.controller;
 
 import com.prgrms.voucher.model.Voucher;
 import com.prgrms.voucher.model.VoucherType;
+import com.prgrms.voucher.service.CustomerService;
 import com.prgrms.voucher.service.VoucherService;
 import com.prgrms.voucher.view.InputView;
 import com.prgrms.voucher.view.OutputView;
@@ -17,10 +18,13 @@ public class VoucherController {
     private static final String EXIT = "exit";
     private static final String CREATE = "create";
     private static final String LIST = "list";
+    private static final String BLACK_LIST="blacklist";
     private final VoucherService voucherService;
+    private final CustomerService customerService;
 
-    public VoucherController(VoucherService voucherService) {
+    public VoucherController(VoucherService voucherService, CustomerService customerService) {
         this.voucherService = voucherService;
+        this.customerService = customerService;
     }
 
     public void run() {
@@ -28,7 +32,6 @@ public class VoucherController {
             try {
                 execute(InputView.inputCommand());
             } catch (Exception e) {
-                log.error(e.getMessage(),e);
                 OutputView.showErrorMessage(e.getMessage());
             }
         }
@@ -44,7 +47,10 @@ public class VoucherController {
                 create();
                 break;
             case LIST:
-                OutputView.showVouchers(voucherService.findVouchers());
+                OutputView.showVouchers(voucherService.getVouchers());
+                break;
+            case BLACK_LIST:
+                OutputView.showBlackList(customerService.getBlackList());
                 break;
             default:
                 throw new IllegalArgumentException(COMMAND_INPUT_ERROR);

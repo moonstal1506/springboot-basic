@@ -1,5 +1,6 @@
 package com.prgrms.voucher.view;
 
+import com.prgrms.voucher.model.Customer;
 import com.prgrms.voucher.model.Voucher;
 
 import java.util.List;
@@ -13,12 +14,16 @@ public class OutputView {
         vouchers.forEach(System.out::println);
     }
 
-    public static void showExitMessage() {
+    public static void showBlackList(List<Customer> blackList) {
+        blackList.forEach(System.out::println);
+    }
+
+        public static void showExitMessage() {
         System.out.println(EXIT_MESSAGE);
     }
 
     public static void showCreateMessage(Voucher voucher) {
-        System.out.println(voucher);
+        System.out.println(voucher + CREATE_MESSAGE);
     }
 
     public static void showErrorMessage(String message) {

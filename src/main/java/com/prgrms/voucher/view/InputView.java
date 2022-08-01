@@ -10,6 +10,7 @@ public class InputView {
     private static final String EXIT = "Type exit to exit the program.";
     private static final String CREATE = "Type create to create a new voucher.";
     private static final String LIST = "Type list to list all vouchers.";
+    private static final String BLACK_LIST = "Type blacklist to list blacklist.";
     private static Scanner scanner = new Scanner(System.in);
 
     public static String inputCommand() {
@@ -17,6 +18,7 @@ public class InputView {
         System.out.println(EXIT);
         System.out.println(CREATE);
         System.out.println(LIST);
+        System.out.println(BLACK_LIST);
         return scanner.nextLine();
     }
 
