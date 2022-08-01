@@ -1,7 +1,7 @@
-package com.prgrms.voucher.repository;
+package com.prgrms.voucher.customer.repository;
 
-import com.prgrms.voucher.model.Customer;
-import com.prgrms.voucher.model.CustomerType;
+import com.prgrms.voucher.customer.model.Customer;
+import com.prgrms.voucher.customer.model.CustomerType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;

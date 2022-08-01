@@ -1,4 +1,4 @@
-package com.prgrms.voucher.model;
+package com.prgrms.voucher.customer.model;
 
 import java.util.UUID;
 

@@ -1,6 +1,6 @@
 package com.prgrms.voucher.view;
 
-import com.prgrms.voucher.model.VoucherType;
+import com.prgrms.voucher.voucher.model.VoucherType;
 
 import java.util.Scanner;
 

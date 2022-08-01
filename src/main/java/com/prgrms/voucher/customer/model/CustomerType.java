@@ -1,4 +1,4 @@
-package com.prgrms.voucher.model;
+package com.prgrms.voucher.customer.model;
 
 public enum CustomerType {
     NORMAL, BLACK

@@ -1,7 +1,7 @@
-package com.prgrms.voucher.service;
+package com.prgrms.voucher.customer.service;
 
-import com.prgrms.voucher.model.Customer;
-import com.prgrms.voucher.repository.BlackListRepository;
+import com.prgrms.voucher.customer.model.Customer;
+import com.prgrms.voucher.customer.repository.BlackListRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

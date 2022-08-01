@@ -1,7 +1,7 @@
 package com.prgrms.voucher.view;
 
-import com.prgrms.voucher.model.Customer;
-import com.prgrms.voucher.model.Voucher;
+import com.prgrms.voucher.customer.model.Customer;
+import com.prgrms.voucher.voucher.model.Voucher;
 
 import java.util.List;
 

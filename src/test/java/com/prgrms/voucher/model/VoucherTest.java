@@ -1,11 +1,11 @@
 package com.prgrms.voucher.model;
 
+import com.prgrms.voucher.voucher.model.FixedAmountVoucher;
+import com.prgrms.voucher.voucher.model.PercentDiscountVoucher;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class VoucherTest {
 

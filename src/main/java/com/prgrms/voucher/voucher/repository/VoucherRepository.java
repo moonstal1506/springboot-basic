@@ -1,6 +1,6 @@
-package com.prgrms.voucher.repository;
+package com.prgrms.voucher.voucher.repository;
 
-import com.prgrms.voucher.model.Voucher;
+import com.prgrms.voucher.voucher.model.Voucher;
 
 import java.util.List;
 import java.util.Optional;

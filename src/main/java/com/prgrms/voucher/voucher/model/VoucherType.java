@@ -1,4 +1,4 @@
-package com.prgrms.voucher.model;
+package com.prgrms.voucher.voucher.model;
 
 import java.util.Arrays;
 import java.util.function.Function;

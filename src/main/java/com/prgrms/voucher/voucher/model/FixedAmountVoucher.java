@@ -1,6 +1,5 @@
-package com.prgrms.voucher.model;
+package com.prgrms.voucher.voucher.model;
 
-import java.io.Serializable;
 import java.util.UUID;
 
 public class FixedAmountVoucher implements Voucher {

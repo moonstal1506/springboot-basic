@@ -1,11 +1,12 @@
 package com.prgrms.voucher.controller;
 
-import com.prgrms.voucher.model.Voucher;
-import com.prgrms.voucher.model.VoucherType;
-import com.prgrms.voucher.service.CustomerService;
-import com.prgrms.voucher.service.VoucherService;
+
+import com.prgrms.voucher.customer.service.CustomerService;
 import com.prgrms.voucher.view.InputView;
 import com.prgrms.voucher.view.OutputView;
+import com.prgrms.voucher.voucher.model.Voucher;
+import com.prgrms.voucher.voucher.model.VoucherType;
+import com.prgrms.voucher.voucher.service.VoucherService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

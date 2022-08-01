@@ -1,7 +1,8 @@
 package com.prgrms.voucher.repository;
 
-import com.prgrms.voucher.model.FixedAmountVoucher;
-import com.prgrms.voucher.model.Voucher;
+import com.prgrms.voucher.voucher.model.FixedAmountVoucher;
+import com.prgrms.voucher.voucher.model.Voucher;
+import com.prgrms.voucher.voucher.repository.MemoryVoucherRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 

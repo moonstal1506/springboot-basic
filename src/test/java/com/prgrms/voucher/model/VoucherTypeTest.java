@@ -1,5 +1,7 @@
 package com.prgrms.voucher.model;
 
+import com.prgrms.voucher.voucher.model.Voucher;
+import com.prgrms.voucher.voucher.model.VoucherType;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

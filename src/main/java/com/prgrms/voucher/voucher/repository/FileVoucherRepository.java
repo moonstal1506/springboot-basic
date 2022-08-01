@@ -1,14 +1,10 @@
-package com.prgrms.voucher.repository;
+package com.prgrms.voucher.voucher.repository;
 
-import com.prgrms.voucher.model.Voucher;
-import com.prgrms.voucher.model.VoucherType;
-import com.prgrms.voucher.view.InputView;
+import com.prgrms.voucher.voucher.model.Voucher;
+import com.prgrms.voucher.voucher.model.VoucherType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Repository;
 
 import java.io.*;
