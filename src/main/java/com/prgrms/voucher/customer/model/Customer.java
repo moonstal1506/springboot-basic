@@ -1,5 +1,10 @@
 package com.prgrms.voucher.customer.model;
 
+import com.prgrms.voucher.customer.repository.CustomerRepository;
+import com.prgrms.voucher.voucher.model.Voucher;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class Customer {
@@ -13,8 +18,24 @@ public class Customer {
         this.type = type;
     }
 
+    public void changeName(String name) {
+        this.name = name;
+    }
+
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public CustomerType getType() {
+        return type;
     }
 
     @Override
