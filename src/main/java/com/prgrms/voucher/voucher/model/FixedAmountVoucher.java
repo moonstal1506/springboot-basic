@@ -6,7 +6,7 @@ public class FixedAmountVoucher implements Voucher {
 
     private static final int MAX_VOUCHER_AMOUNT = 10000;
     private static final VoucherType voucherType = VoucherType.FIXED;
-    private final long amount;
+    private long amount;
     private UUID voucherId;
 
     public FixedAmountVoucher(long amount) {
@@ -41,6 +41,11 @@ public class FixedAmountVoucher implements Voucher {
     @Override
     public long getValue() {
         return amount;
+    }
+
+    @Override
+    public void changeValue(long value) {
+        this.amount = value;
     }
 
     @Override

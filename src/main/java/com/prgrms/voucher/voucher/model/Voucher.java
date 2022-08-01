@@ -12,5 +12,7 @@ public interface Voucher {
 
     long getValue();
 
+    void changeValue(long value);
+
     VoucherType getVoucherType();
 }

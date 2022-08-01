@@ -17,7 +17,7 @@ class MemoryVoucherRepositoryTest {
 
     @AfterEach
     public void afterEach(){
-        repository.clear();
+        repository.deleteAll();
     }
 
     Voucher createVoucher(){

@@ -61,4 +61,19 @@ public class FileVoucherRepository implements VoucherRepository {
         }
         return List.copyOf(vouchers);
     }
+
+    @Override
+    public Voucher updateValue(Voucher voucher) {
+        return null;
+    }
+
+    @Override
+    public void deleteById(UUID voucherId) {
+
+    }
+
+    @Override
+    public void deleteAll() {
+
+    }
 }
