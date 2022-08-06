@@ -26,7 +26,7 @@ public class FileVoucherRepository implements VoucherRepository {
             voucher.setId(UUID.randomUUID());
             FileWriter fileWriter = new FileWriter(file, true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            String line = voucher.getVoucherType() + "," + voucher.getId() + "," + voucher.getValue() + "\n";
+            String line = voucher.getType() + "," + voucher.getId() + "," + voucher.getValue() + "\n";
             bufferedWriter.write(line);
             bufferedWriter.flush();
         } catch (IOException e) {

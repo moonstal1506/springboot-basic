@@ -5,7 +5,6 @@ import com.prgrms.voucher.voucher.model.Voucher;
 import com.prgrms.voucher.voucher.model.VoucherType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.Profile;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -85,7 +84,7 @@ public class JdbcVoucherRepository implements VoucherRepository{
     private Map<String, Object> toPramMap(Voucher voucher) {
         return new HashMap<>() {{
             put("voucherId", voucher.getId().toString().getBytes());
-            put("type", voucher.getVoucherType().getType());
+            put("type", voucher.getType().getType());
             put("value", voucher.getValue());
         }};
     }

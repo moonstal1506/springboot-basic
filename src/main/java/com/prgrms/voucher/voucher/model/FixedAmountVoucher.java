@@ -7,7 +7,7 @@ public class FixedAmountVoucher implements Voucher {
     private static final int MAX_VOUCHER_AMOUNT = 10000;
     private static final VoucherType voucherType = VoucherType.FIXED;
     private long amount;
-    private UUID voucherId;
+    private UUID id;
 
     public FixedAmountVoucher(long amount) {
         if(amount<0) {
@@ -24,12 +24,12 @@ public class FixedAmountVoucher implements Voucher {
 
     @Override
     public UUID getId() {
-        return voucherId;
+        return id;
     }
 
     @Override
     public void setId(UUID voucherId) {
-        this.voucherId = voucherId;
+        this.id = voucherId;
     }
 
     @Override
@@ -49,7 +49,7 @@ public class FixedAmountVoucher implements Voucher {
     }
 
     @Override
-    public VoucherType getVoucherType() {
+    public VoucherType getType() {
         return voucherType;
     }
 
@@ -60,7 +60,7 @@ public class FixedAmountVoucher implements Voucher {
     @Override
     public String toString() {
         return "FixedAmountVoucher{" +
-                "voucherId=" + voucherId +
+                "voucherId=" + id +
                 ", amount=" + amount +
                 '}';
     }
