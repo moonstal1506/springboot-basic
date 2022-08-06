@@ -15,7 +15,7 @@
         </thead>
         <tbody>
         <tr th:each="voucher:${vouchers}" th:object="${voucher}">
-            <td><a th:href="@{/voucher/{id}(id = *{id})}" th:text="*{id}"></a></td>
+            <td><a th:href="@{/vouchers/{id}(id = *{id})}" th:text="*{id}"></a></td>
             <td th:text="*{value}"></td>
             <td th:text="*{type}"></td>
         </tr>
