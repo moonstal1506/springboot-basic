@@ -53,7 +53,6 @@ class JdbcVoucherRepositoryTest {
 
     Voucher createVoucher() {
         Voucher voucher = new FixedAmountVoucher(1000L);
-        voucher.setId(UUID.randomUUID());
         return voucher;
     }
 

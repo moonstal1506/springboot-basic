@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"/>
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+    <img th:src="@{/img/voucher.png}" class="img-fluid">
+    <form th:action="@{/vouchers/new}" th:object="${voucher}" method="post">
+        <div class="mb-3">
+            <label for="value" class="form-label">Value</label>
+            <input type="text" th:field="*{value}" class="form-control" id="value">
+        </div>
+        <div>Type</div>
+        <div th:each="type : ${voucherTypes}" class="form-check form-check-inline">
+            <input type="radio" th:field="*{type}" th:value="${type.name()}"
+                   class="form-check-input">
+            <label th:for="${#ids.prev('type')}" th:text="${type}"
+                   class="form-check-label">
+                Type
+            </label>
+        </div>
+        <hr/>
+        <div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    <div th:replace="fragments/footer :: footer"/>
+</div> <!-- /container -->
+</body>
+</html>

@@ -27,6 +27,7 @@ public class JdbcVoucherRepository implements VoucherRepository{
 
     @Override
     public UUID save(Voucher voucher) {
+        voucher.setId(UUID.randomUUID());
         int update = jdbcTemplate.update("insert into voucher(voucher_id, type, value) values (UUID_TO_BIN(:voucherId),:type,:value)", toPramMap(voucher));
         if (update != 1) {
             throw new RuntimeException("Noting was inserted");
