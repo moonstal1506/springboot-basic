@@ -62,7 +62,8 @@ public class JdbcVoucherRepository implements VoucherRepository{
 
     @Override
     public void deleteById(UUID voucherId) {
-        jdbcTemplate.getJdbcTemplate().update("delete from voucher where voucher_id = UUID_TO_BIN(:voucherId)");
+        jdbcTemplate.update("delete from voucher where voucher_id = UUID_TO_BIN(:voucherId)",
+                Collections.singletonMap("voucherId", voucherId.toString().getBytes()));
     }
 
     @Override
