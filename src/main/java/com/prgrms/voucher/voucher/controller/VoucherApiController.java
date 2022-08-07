@@ -12,37 +12,37 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/vouchers")
 @RequiredArgsConstructor
 public class VoucherApiController {
 
     private final VoucherService voucherService;
 
-    @GetMapping("/vouchers")
+    @GetMapping
     public List<Voucher> findVouchers() {
         return voucherService.getVouchers();
     }
 
-    @GetMapping("/vouchers/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Voucher> findVoucher(@PathVariable("id") UUID id) {
         Optional<Voucher> voucher = voucherService.findVoucher(id);
         return voucher.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping("/vouchers/new")
+    @PostMapping("/new")
     public ResponseEntity<?> saveVoucher(@RequestBody VoucherForm form) {
         Voucher voucher = form.getType().create(form.getValue());
         voucherService.save(voucher);
         return new ResponseEntity<>(form, HttpStatus.OK);
     }
 
-    @PatchMapping("/vouchers/{id}")
+    @PatchMapping("/{id}")
     public ResponseEntity<?> updateVoucher(@PathVariable("id") UUID id, @RequestBody VoucherForm form) {
         voucherService.updateVoucher(id, form);
         return new ResponseEntity<>(form, HttpStatus.OK);
     }
 
-    @DeleteMapping("/vouchers/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteVoucher(@PathVariable("id") UUID id) {
         voucherService.deleteVoucher(id);
         return new ResponseEntity<>("삭제성공", HttpStatus.OK);
